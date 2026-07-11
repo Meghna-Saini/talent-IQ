@@ -84,7 +84,7 @@ export async function getSessionById(req,res) {
     .populate("host","name email profileImage clerkId")
     .populate("participant","name email profileImage clerkId");
 
-    if(!sission) return res.status(404).json({message:"Session not Found"});
+    if(!session) return res.status(404).json({message:"Session not Found"});
 
     res.status(200).json({session});  
   } catch (error) {
